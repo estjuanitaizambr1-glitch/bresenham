@@ -1,8 +1,13 @@
 // Inicializar canvas
+
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+
 //escala
 const escala = 20;
+
+// Dibuja un punto en el canvas usando coordenadas cartesianas (x, y)
+// Convierte las coordenadas matemáticas al sistema del canvas y aplica la escala
 function plot(x,y){
     ctx.fillRect(
         x*escala,
@@ -11,6 +16,7 @@ function plot(x,y){
         escala
     );
 }
+
 /**
  * * Código suministrado por el profesor
  * Implementación del algoritmo de líneas de Bresenham.
