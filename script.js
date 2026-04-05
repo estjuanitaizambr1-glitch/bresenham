@@ -20,6 +20,21 @@ function plot(x,y){
 function limpiarCanvas(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 }
+// Función que limpia el canvas y dibuja los ejes X y Y 
+
+function dibujarEjes(){
+
+    limpiarCanvas();
+
+    ctx.beginPath();
+    ctx.moveTo(0,canvas.height);
+    ctx.lineTo(canvas.width,canvas.height);
+
+    ctx.moveTo(0,0);
+    ctx.lineTo(0,canvas.height);
+
+    ctx.stroke();
+}
 
 /**
  * * Código suministrado por el profesor
