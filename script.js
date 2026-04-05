@@ -99,3 +99,12 @@ function bresenham(x0, y0, x1, y1, plot) {
         paso++;
     }
 }
+//se obtienen los valores
+function obtenerValores(){
+    return{
+        x0:parseInt(x0.value),
+        y0:parseInt(y0.value),
+        x1:parseInt(x1.value),
+        y1:parseInt(y1.value)
+    }
+}
