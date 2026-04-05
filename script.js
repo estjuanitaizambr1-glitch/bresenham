@@ -36,6 +36,10 @@ function dibujarEjes(){
     ctx.stroke();
 }
 
+function limpiarTabla(){
+    document.querySelector("#tabla tbody").innerHTML="";
+}
+
 /**
  * * Código suministrado por el profesor
  * Implementación del algoritmo de líneas de Bresenham.
