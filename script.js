@@ -68,14 +68,20 @@ function bresenham(x0, y0, x1, y1, plot) {
     let sy = (y0 < y1) ? 1 : -1;
     let err = dx - dy;
 
+    // Contador de pasos (AGREGADO)
+    let paso = 0;
+
     while (true) {
         // Dibujar el punto actual
         plot(x0, y0);
 
+        let e2 = 2 * err;
+
+        // Registrar valores en tabla (AGREGADO)
+        agregarFila(paso, x0, y0, err, e2);
+
         // Condición de finalización
         if (x0 === x1 && y0 === y1) break;
-
-        let e2 = 2 * err;
 
         // Ajuste en el eje X
         if (e2 > -dy) {
@@ -88,5 +94,8 @@ function bresenham(x0, y0, x1, y1, plot) {
             err += dx;
             y0 += sy;
         }
+
+        // Incrementar paso (AGREGADO)
+        paso++;
     }
 }
