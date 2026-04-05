@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Bresenham</title>
+<style>
+canvas{border:1px solid black;}
+table,th,td{border:1px solid black;border-collapse:collapse;}
+</style>
+</head>
+<body>
+
+X0 <input id="x0" type="number">
+Y0 <input id="y0" type="number">
+X1 <input id="x1" type="number">
+Y1 <input id="y1" type="number">
+
+<button onclick="dibujar()">Dibujar</button>
+
+<canvas id="canvas" width="500" height="500"></canvas>
+
+<table id="tabla">
+<thead>
+<tr>
+<th>Paso</th>
+<th>X</th>
+<th>Y</th>
+<th>Error</th>
+<th>e2</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
