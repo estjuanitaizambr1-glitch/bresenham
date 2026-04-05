@@ -1,4 +1,6 @@
-
+// Inicializar canvas
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 /**
  * * Código suministrado por el profesor
  * Implementación del algoritmo de líneas de Bresenham.
