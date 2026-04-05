@@ -20,11 +20,36 @@ function plot(x,y){
 function limpiarCanvas(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 }
+/**
+ * Dibuja una cuadrícula en el canvas
+ */
+function dibujarCuadricula(){
+
+    ctx.strokeStyle = "#ddd"; 
+
+    for(let x = 0; x <= canvas.width; x += escala){
+        ctx.beginPath();
+        ctx.moveTo(x,0);
+        ctx.lineTo(x,canvas.height);
+        ctx.stroke();
+    }
+
+    for(let y = 0; y <= canvas.height; y += escala){
+        ctx.beginPath();
+        ctx.moveTo(0,y);
+        ctx.lineTo(canvas.width,y);
+        ctx.stroke();
+    }
+
+    ctx.strokeStyle = "black"; 
+}
 // Función que limpia el canvas y dibuja los ejes X y Y 
 
 function dibujarEjes(){
 
     limpiarCanvas();
+
+    dibujarCuadricula();
 
     ctx.beginPath();
     ctx.moveTo(0,canvas.height);
