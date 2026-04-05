@@ -17,6 +17,10 @@ function plot(x,y){
     );
 }
 
+function limpiarCanvas(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
 /**
  * * Código suministrado por el profesor
  * Implementación del algoritmo de líneas de Bresenham.
