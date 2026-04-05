@@ -9,6 +9,7 @@ const escala = 20;
 // Dibuja un punto en el canvas usando coordenadas cartesianas (x, y)
 // Convierte las coordenadas matemáticas al sistema del canvas y aplica la escala
 function plot(x,y){
+    ctx.fillStyle = "#da84fc";
     ctx.fillRect(
         x*escala,
         canvas.height-(y+1)*escala,

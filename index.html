@@ -5,45 +5,130 @@
 <title>Bresenham</title>
 
 <style>
-canvas{
-    border:1px solid black;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fefff9;
+    text-align: center;
+    padding: 20px;
 }
 
-table,th,td{
-    border:1px solid black;
-    border-collapse:collapse;
+
+.container{
+    max-width: 700px;
+    margin: auto;
+}
+
+
+.card{
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 10px;
+    margin: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card1{
+    background-color:#FFE5EC;
+}
+
+.card2{
+    background-color:#E0F7FA;
+}
+
+.card b{
+    display:block;
+    margin-bottom:5px;
+}
+
+input{
+    width:60px;
+    padding:4px;
+    margin:2px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    text-align:center;
+}
+
+/* Botón */
+button{
+    background-color:#EAD7FF;
+    border:none;
+    padding:8px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+button:hover{
+    background-color:#d7bfff;
+    transform:translateY(-1px);
+}
+
+/* Canvas */
+canvas {
+    border: 1px solid #ccc;
+    display: block;
+    margin: 20px auto;
+    background: rgb(255, 255, 239);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Tabla */
+table {
+    border-collapse: collapse;
+    font-size: 13px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+th {
+    background-color: #FFE5EC;
+    color: #b0446a;
+    padding: 8px 16px;
+    font-weight: 600;
+    border-bottom: 2px solid #f7b8cc;
+}
+
+td {
+    padding: 6px 16px;
+    border-bottom: 1px solid #f0e0e8;
+    color: #efbcff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #E0F7FA;
+}
+
+tbody tr:hover {
+    background-color: #b2eaf4;
 }
 </style>
 
 </head>
+
 <body>
 
-<div style="background-color:#f9ebf6; padding:8px; border-radius:6px; display:inline-block;">
-<b>Coordenada 1</b><br>
+<div class="container" style="margin-top: 60px;">
+
+<div class="card card1">
+<b>Coordenada 1</b>
 X0 <input id="x0" type="number">
 Y0 <input id="y0" type="number">
 </div>
 
-&nbsp;&nbsp;
-
-<div style="background-color:#E0F7FA; padding:8px; border-radius:6px; display:inline-block;">
-<b>Coordenada 2</b><br>
+<div class="card card2">
+<b>Coordenada 2</b>
 X1 <input id="x1" type="number">
 Y1 <input id="y1" type="number">
 </div>
 
 <br><br>
 
-<button onclick="dibujar()" 
-style="background-color:#EAD7FF; border:none; padding:6px 12px; border-radius:5px; cursor:pointer;">
-Dibujar
-</button>
-
-<br><br>
+<button onclick="dibujar()">Dibujar</button>
 
 <canvas id="canvas" width="500" height="500"></canvas>
-
-<br><br>
 
 <table id="tabla">
 <thead>
@@ -57,6 +142,8 @@ Dibujar
 </thead>
 <tbody></tbody>
 </table>
+
+</div>
 
 <script src="script.js"></script>
 
