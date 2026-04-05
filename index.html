@@ -3,39 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <title>Bresenham</title>
+
 <style>
-canvas{border:1px solid black;}
-table,th,td{border:1px solid black;border-collapse:collapse;}
-/* Mejora visual del botón */
-button{
-    background-color:#4CAF50;
-    color:white;
-    border:none;
-    padding:8px 16px;
-    font-size:14px;
-    cursor:pointer;
-    border-radius:5px;
+canvas{
+    border:1px solid black;
 }
 
-/* efecto al pasar el mouse */
-button:hover{
-    background-color:#45a049;
+table,th,td{
+    border:1px solid black;
+    border-collapse:collapse;
 }
 </style>
+
 </head>
 <body>
 
+<div style="background-color:#f9ebf6; padding:8px; border-radius:6px; display:inline-block;">
+<b>Coordenada 1</b><br>
 X0 <input id="x0" type="number">
 Y0 <input id="y0" type="number">
+</div>
+
+&nbsp;&nbsp;
+
+<div style="background-color:#E0F7FA; padding:8px; border-radius:6px; display:inline-block;">
+<b>Coordenada 2</b><br>
 X1 <input id="x1" type="number">
 Y1 <input id="y1" type="number">
+</div>
 
-<button onclick="dibujar()">Dibujar</button>
+<br><br>
+
+<button onclick="dibujar()" 
+style="background-color:#EAD7FF; border:none; padding:6px 12px; border-radius:5px; cursor:pointer;">
+Dibujar
+</button>
+
+<br><br>
 
 <canvas id="canvas" width="500" height="500"></canvas>
 
+<br><br>
+
 <table id="tabla">
-    
 <thead>
 <tr>
 <th>Paso</th>
@@ -49,5 +59,6 @@ Y1 <input id="y1" type="number">
 </table>
 
 <script src="script.js"></script>
+
 </body>
 </html>
