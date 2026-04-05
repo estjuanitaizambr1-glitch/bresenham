@@ -108,3 +108,12 @@ function obtenerValores(){
         y1:parseInt(y1.value)
     }
 }
+function dibujar(){
+
+    const v = obtenerValores();
+
+    limpiarTabla();
+    dibujarEjes();
+
+    bresenham(v.x0,v.y0,v.x1,v.y1,plot);
+}
