@@ -39,6 +39,17 @@ function dibujarEjes(){
 function limpiarTabla(){
     document.querySelector("#tabla tbody").innerHTML="";
 }
+// Inserta una fila en la tabla con p, x, y, error y error al cuadrado
+function agregarFila(p,x,y,err,e2){
+    document.querySelector("#tabla tbody").innerHTML+=`
+    <tr>
+    <td>${p}</td>
+    <td>${x}</td>
+    <td>${y}</td>
+    <td>${err}</td>
+    <td>${e2}</td>
+    </tr>`;
+} 
 
 /**
  * * Código suministrado por el profesor
