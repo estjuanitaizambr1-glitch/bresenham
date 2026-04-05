@@ -1,6 +1,16 @@
 // Inicializar canvas
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
+//escala
+const escala = 20;
+function plot(x,y){
+    ctx.fillRect(
+        x*escala,
+        canvas.height-(y+1)*escala,
+        escala,
+        escala
+    );
+}
 /**
  * * Código suministrado por el profesor
  * Implementación del algoritmo de líneas de Bresenham.
