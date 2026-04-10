@@ -9,11 +9,12 @@ let maxValor;
 
 // Dibuja un punto en el canvas usando coordenadas cartesianas (x, y)
 // Convierte las coordenadas matemáticas al sistema del canvas y aplica la escala
+//x va de izquierda a derecha, y va de abajo hacia arriba
 function plot(x,y){
     ctx.fillStyle = "#da84fc";
     ctx.fillRect(
         x*escala,
-        canvas.height-(y+1)*escala,
+        canvas.height - (y * escala),
         escala,
         escala
     );
