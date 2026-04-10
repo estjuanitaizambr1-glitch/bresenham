@@ -7,9 +7,12 @@ const ctx = canvas.getContext("2d");
 let escala;
 let maxValor;
 
-// Dibuja un punto en el canvas usando coordenadas cartesianas (x, y)
-// Convierte las coordenadas matemáticas al sistema del canvas y aplica la escala
-//x va de izquierda a derecha, y va de abajo hacia arriba
+/**
+ * Dibuja un punto en el canvas usando coordenadas cartesianas.
+ * Convierte el sistema matemático (origen abajo) al sistema del canvas (origen arriba).
+ * @param {number} x - Coordenada X del punto.
+ * @param {number} y - Coordenada Y del punto.
+ */
 function plot(x,y){
     ctx.fillStyle = "#da84fc";
     ctx.fillRect(
@@ -19,12 +22,18 @@ function plot(x,y){
         escala
     );
 }
-
+/**
+ * Limpia completamente el canvas.
+ * Elimina cualquier dibujo previo.
+ */
 function limpiarCanvas(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 }
 /**
- * Dibuja una cuadrícula en el canvas
+ * Dibuja la cuadrícula del plano cartesiano.
+ * Incluye líneas horizontales y verticales según la escala dinámica.
+ * También dibuja la numeración en los ejes X y Y.
+ * Usa un salto dinámico para evitar que los números se encimen.
  */
 function dibujarCuadricula(){
     // Controla cada cuánto se muestran números, para que en coordenadas grandes no se amontonen
@@ -62,8 +71,10 @@ function dibujarCuadricula(){
 }
     ctx.strokeStyle = "black"; 
 }
-// Función que limpia el canvas y dibuja los ejes X y Y 
-
+/**
+ * Dibuja los ejes principales del plano cartesiano (X y Y).
+ * Limpia el canvas y luego dibuja la cuadrícula y los ejes.
+ */
 function dibujarEjes(){
 
     limpiarCanvas();
@@ -79,11 +90,20 @@ function dibujarEjes(){
 
     ctx.stroke();
 }
-
+/**
+ * Limpia el contenido de la tabla eliminando todas las filas.
+ */
 function limpiarTabla(){
     document.querySelector("#tabla tbody").innerHTML="";
 }
-// Inserta una fila en la tabla con p, x, y, error y error al cuadrado
+/**
+ * Agrega una fila a la tabla con los valores del algoritmo.
+ * @param {number} p - Número de paso.
+ * @param {number} x - Coordenada X.
+ * @param {number} y - Coordenada Y.
+ * @param {number} err - Error acumulado.
+ * @param {number} e2 - Error duplicado.
+ */
 function agregarFila(p,x,y,err,e2){
     document.querySelector("#tabla tbody").innerHTML+=`
     <tr>
@@ -143,7 +163,10 @@ function bresenham(x0, y0, x1, y1, plot) {
         paso++;
     }
 }
-//se obtienen los valores
+/**
+ * Obtiene los valores ingresados por el usuario desde los inputs.
+ * @returns {{x0:number, y0:number, x1:number, y1:number}} Coordenadas ingresadas.
+ */
 function obtenerValores(){
     return{
         x0:parseInt(x0.value),
@@ -152,6 +175,13 @@ function obtenerValores(){
         y1:parseInt(y1.value)
     }
 }
+/**
+ * Función principal que ejecuta el proceso completo:
+ * Obtiene los valores ingresados
+ * Calcula la escala dinámica
+ * Dibuja ejes y cuadrícula
+ * Ejecuta el algoritmo de Bresenham
+ */
 function dibujar(){
 
     const v = obtenerValores();
