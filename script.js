@@ -3,8 +3,9 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
-//escala
-const escala = 20;
+// Escala y máximo dinámicos (se calculan al dibujar)
+let escala;
+let maxValor;
 
 // Dibuja un punto en el canvas usando coordenadas cartesianas (x, y)
 // Convierte las coordenadas matemáticas al sistema del canvas y aplica la escala
