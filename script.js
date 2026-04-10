@@ -26,7 +26,9 @@ function limpiarCanvas(){
  * Dibuja una cuadrícula en el canvas
  */
 function dibujarCuadricula(){
-
+    // Tamaño de los números
+    ctx.font = "10px Arial";
+    ctx.fillStyle = "black";
     ctx.strokeStyle = "#ddd"; 
 
   // Ahora usamos unidades en vez de píxeles directos
@@ -37,6 +39,8 @@ function dibujarCuadricula(){
     ctx.moveTo(x,0);
     ctx.lineTo(x,canvas.height);
     ctx.stroke();
+     // Número en eje X
+    ctx.fillText(i, x, canvas.height - 2);
 }
 
     for(let i = 0; i <= maxValor; i++){
@@ -46,6 +50,8 @@ function dibujarCuadricula(){
     ctx.moveTo(0,y);
     ctx.lineTo(canvas.width,y);
     ctx.stroke();
+    // Número en eje Y (invertido)
+    ctx.fillText(i, 2, canvas.height - y);
 }
     ctx.strokeStyle = "black"; 
 }
