@@ -140,6 +140,16 @@ function dibujar(){
     const v = obtenerValores();
 
     limpiarTabla();
+
+    //calcular máximo dinámico según los datos
+    maxValor = Math.max(v.x0, v.y0, v.x1, v.y1);
+
+    // Evitar división por 0
+    if(maxValor === 0) maxValor = 1;
+
+    //calcular escala en función del máximo
+    escala = canvas.width / maxValor;
+
     dibujarEjes();
 
     bresenham(v.x0,v.y0,v.x1,v.y1,plot);
