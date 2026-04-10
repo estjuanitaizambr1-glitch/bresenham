@@ -27,6 +27,8 @@ function limpiarCanvas(){
  * Dibuja una cuadrícula en el canvas
  */
 function dibujarCuadricula(){
+    // Controla cada cuánto se muestran números, para que en coordenadas grandes no se amontonen
+    let salto = Math.ceil(maxValor / 20);
     // Tamaño de los números
     ctx.font = "10px Arial";
     ctx.fillStyle = "black";
@@ -41,7 +43,9 @@ function dibujarCuadricula(){
     ctx.lineTo(x,canvas.height);
     ctx.stroke();
      // Número en eje X
+    if(i % salto === 0){
     ctx.fillText(i, x, canvas.height - 2);
+}
 }
 
     for(let i = 0; i <= maxValor; i++){
@@ -52,7 +56,9 @@ function dibujarCuadricula(){
     ctx.lineTo(canvas.width,y);
     ctx.stroke();
     // Número en eje Y (invertido)
+    if(i % salto === 0){
     ctx.fillText(i, 2, canvas.height - y);
+}
 }
     ctx.strokeStyle = "black"; 
 }
