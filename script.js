@@ -29,20 +29,24 @@ function dibujarCuadricula(){
 
     ctx.strokeStyle = "#ddd"; 
 
-    for(let x = 0; x <= canvas.width; x += escala){
-        ctx.beginPath();
-        ctx.moveTo(x,0);
-        ctx.lineTo(x,canvas.height);
-        ctx.stroke();
-    }
+  // Ahora usamos unidades en vez de píxeles directos
+    for(let i = 0; i <= maxValor; i++){
+    let x = i * escala;
 
-    for(let y = 0; y <= canvas.height; y += escala){
-        ctx.beginPath();
-        ctx.moveTo(0,y);
-        ctx.lineTo(canvas.width,y);
-        ctx.stroke();
-    }
+    ctx.beginPath();
+    ctx.moveTo(x,0);
+    ctx.lineTo(x,canvas.height);
+    ctx.stroke();
+}
 
+    for(let i = 0; i <= maxValor; i++){
+    let y = i * escala;
+
+    ctx.beginPath();
+    ctx.moveTo(0,y);
+    ctx.lineTo(canvas.width,y);
+    ctx.stroke();
+}
     ctx.strokeStyle = "black"; 
 }
 // Función que limpia el canvas y dibuja los ejes X y Y 
