@@ -14,7 +14,8 @@ body{
 
 
 .container{
-    max-width: 700px;
+/* cambiamos de 700px a 900px*/
+    max-width: 900px;
     margin: auto;
 }
 
@@ -60,7 +61,23 @@ button{
     transition:0.2s;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+/* Usamos flexbox para organizar el canvas y la tabla
+   horizontalmente (canvas izquierda, tabla derecha) */
+.zona{
+    display: flex;
 
+    /* Pone los elementos en horizontal */
+    flex-direction: row;
+
+    /* Centra todo en la página */
+    justify-content: center;
+
+    /* Alinea arriba */
+    align-items: flex-start;
+
+    /* Espacio entre canvas y tabla */
+    gap: 30px;
+}
 button:hover{
     background-color:#d7bfff;
     transform:translateY(-1px);
@@ -128,9 +145,12 @@ Y1 <input id="y1" type="number">
 
 <button onclick="dibujar()">Dibujar</button>
 
-<canvas id="canvas" width="500" height="500"></canvas>
+<div class="zona">
+    <canvas id="canvas" width="500" height="500"></canvas>
 
-<table id="tabla">
+    <table id="tabla">
+        </table>
+        </div>
 <thead>
 <tr>
 <th>Paso</th>
